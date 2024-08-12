@@ -9,7 +9,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const res = await axios.get('http://localhost:5000/api/questions');
+      const res = await axios.get('https://task-backend-k2nf.onrender.com/api/questions');
       setQuestions(res.data);
     };
     fetchQuestions();
@@ -22,7 +22,7 @@ const AdminDashboard = () => {
 
   const handleAddQuestion = async () => {
     if (currentQuestion.question && currentQuestion.answer) {
-      const res = await axios.post('http://localhost:5000/api/questions', currentQuestion);
+      const res = await axios.post('https://task-backend-k2nf.onrender.com/api/questions', currentQuestion);
       setQuestions([...questions, res.data]);
       setCurrentQuestion({ id: null, question: "", answer: "" });
     }
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   };
 
   const handleUpdateQuestion = async () => {
-    await axios.put(`http://localhost:5000/api/questions/${currentQuestion.id}`, currentQuestion);
+    await axios.put(`https://task-backend-k2nf.onrender.com/api/questions/${currentQuestion.id}`, currentQuestion);
     setQuestions(
       questions.map((q) =>
         q.id === currentQuestion.id ? currentQuestion : q
@@ -45,7 +45,7 @@ const AdminDashboard = () => {
   };
 
   const handleDeleteQuestion = async (id) => {
-    await axios.delete(`http://localhost:5000/api/questions/${id}`);
+    await axios.delete(`https://task-backend-k2nf.onrender.com/api/questions/${id}`);
     setQuestions(questions.filter((q) => q.id !== id));
   };
 

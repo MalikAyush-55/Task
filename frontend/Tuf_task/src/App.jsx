@@ -1,6 +1,6 @@
 import React from 'react';
 import Flashcard from './components/Flashcard';
-import AdminDashboard from './components/Admindashboard';
+import AdminDashboard from './components/AdminDashboard';
 import './App.css';
 
 function App() {

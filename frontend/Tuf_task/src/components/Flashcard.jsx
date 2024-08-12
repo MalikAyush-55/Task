@@ -9,7 +9,7 @@ const Flashcard = () => {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const res = await axios.get('http://localhost:5000/api/questions');
+      const res = await axios.get('https://task-backend-k2nf.onrender.com/api/questions');
       setQuestions(res.data);
     };
     fetchQuestions();
